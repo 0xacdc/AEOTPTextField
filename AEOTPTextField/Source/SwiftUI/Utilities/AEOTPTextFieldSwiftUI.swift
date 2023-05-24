@@ -12,6 +12,7 @@ class AEOTPTextFieldSwiftUI: AEOTPTextField {
     init(
         slotsCount: Int,
         otpDefaultCharacter: String,
+        otpDefaultCharacterColor: UIColor,
         otpBackgroundColor: UIColor,
         otpFilledBackgroundColor: UIColor,
         otpCornerRaduis: CGFloat,
@@ -27,6 +28,7 @@ class AEOTPTextFieldSwiftUI: AEOTPTextField {
         super.init(frame: .init(origin: .zero, size: .init(width: UIScreen.main.bounds.width * 0.8, height: 40)))
         
         self.otpDefaultCharacter = otpDefaultCharacter
+        self.otpDefaultCharacterColor = otpDefaultCharacterColor
         self.otpBackgroundColor = otpBackgroundColor
         self.otpFilledBackgroundColor = otpFilledBackgroundColor
         self.otpCornerRaduis = otpCornerRaduis

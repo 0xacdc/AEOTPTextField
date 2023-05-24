@@ -12,6 +12,7 @@ struct AEOTPViewRepresentable: UIViewRepresentable {
     @Binding private var text: String
     private let slotsCount: Int
     private let otpDefaultCharacter: String
+    private let otpDefaultCharacterColor: UIColor
     private let otpBackgroundColor: UIColor
     private let otpFilledBackgroundColor: UIColor
     private let otpCornerRaduis: CGFloat
@@ -30,6 +31,7 @@ struct AEOTPViewRepresentable: UIViewRepresentable {
         text: Binding<String>,
         slotsCount: Int = 6,
         otpDefaultCharacter: String = "",
+        otpDefaultCharacterColor: UIColor = .label,
         otpBackgroundColor: UIColor = UIColor(red: 0.949, green: 0.949, blue: 0.949, alpha: 1),
         otpFilledBackgroundColor: UIColor = UIColor(red: 0.949, green: 0.949, blue: 0.949, alpha: 1),
         otpCornerRaduis: CGFloat = 10,
@@ -47,6 +49,7 @@ struct AEOTPViewRepresentable: UIViewRepresentable {
         self._text = text
         self.slotsCount = slotsCount
         self.otpDefaultCharacter = otpDefaultCharacter
+        self.otpDefaultCharacterColor = otpDefaultCharacterColor
         self.otpBackgroundColor = otpBackgroundColor
         self.otpFilledBackgroundColor = otpFilledBackgroundColor
         self.otpCornerRaduis = otpCornerRaduis
@@ -63,6 +66,7 @@ struct AEOTPViewRepresentable: UIViewRepresentable {
         self.textField = AEOTPTextFieldSwiftUI(
             slotsCount: slotsCount,
             otpDefaultCharacter: otpDefaultCharacter,
+            otpDefaultCharacterColor: otpDefaultCharacterColor,
             otpBackgroundColor: otpBackgroundColor,
             otpFilledBackgroundColor: otpFilledBackgroundColor,
             otpCornerRaduis: otpCornerRaduis,

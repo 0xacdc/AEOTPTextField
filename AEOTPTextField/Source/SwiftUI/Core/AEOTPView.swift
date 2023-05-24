@@ -25,6 +25,8 @@ public struct AEOTPView: View {
     private let height: CGFloat
     /// The default character placed in the text field slots
     private let otpDefaultCharacter: String
+    /// The default character placed in the text field slots Color
+    private let otpDefaultCharacterColor: UIColor
     /// The default background color of the text field slots before entering a character
     private let otpBackgroundColor: UIColor
     /// The default background color of the text field slots after entering a character
@@ -83,6 +85,7 @@ public struct AEOTPView: View {
         width: CGFloat = UIScreen.main.bounds.width * 0.8,
         height: CGFloat = 40,
         otpDefaultCharacter: String = "",
+        otpDefaultCharacterColor: UIColor = .black,
         otpBackgroundColor: UIColor = UIColor(red: 0.949, green: 0.949, blue: 0.949, alpha: 1),
         otpFilledBackgroundColor: UIColor = UIColor(red: 0.949, green: 0.949, blue: 0.949, alpha: 1),
         otpCornerRaduis: CGFloat = 10,
@@ -103,6 +106,7 @@ public struct AEOTPView: View {
         self.width = width
         self.height = height
         self.otpDefaultCharacter = otpDefaultCharacter
+        self.otpDefaultCharacterColor = otpDefaultCharacterColor
         self.otpBackgroundColor = otpBackgroundColor
         self.otpFilledBackgroundColor = otpFilledBackgroundColor
         self.otpCornerRaduis = otpCornerRaduis
@@ -147,6 +151,7 @@ public struct AEOTPView: View {
             text: $text,
             slotsCount: slotsCount,
             otpDefaultCharacter: otpDefaultCharacter,
+            otpDefaultCharacterColor: otpDefaultCharacterColor,
             otpBackgroundColor: otpBackgroundColor,
             otpFilledBackgroundColor: otpFilledBackgroundColor,
             otpCornerRaduis: otpCornerRaduis,

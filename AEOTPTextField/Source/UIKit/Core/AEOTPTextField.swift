@@ -14,6 +14,8 @@ public class AEOTPTextField: UITextField {
     //
     /// The default character placed in the text field slots
     public var otpDefaultCharacter = ""
+    /// The default character placed in the text field slots Color
+    public var otpDefaultCharacterColor = UIColor.black
     /// The default background color of the text field slots before entering a character
     public var otpBackgroundColor: UIColor = .init(red: 0.949, green: 0.949, blue: 0.949, alpha: 1)
     /// The default background color of the text field slots after entering a character
@@ -72,6 +74,7 @@ public class AEOTPTextField: UITextField {
         text = nil
         digitLabels.forEach { currentLabel in
             currentLabel.text = otpDefaultCharacter
+            currentLabel.textColor = otpDefaultCharacterColor
             currentLabel.layer.borderWidth = otpDefaultBorderWidth
             currentLabel.layer.borderColor = otpDefaultBorderColor.cgColor
             currentLabel.backgroundColor = otpBackgroundColor
@@ -129,7 +132,7 @@ private extension AEOTPTextField {
         label.layer.borderWidth = otpDefaultBorderWidth
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
-        label.textColor = otpTextColor
+        label.textColor = otpDefaultCharacterColor
         label.font = label.font.withSize(otpFontSize)
         label.font = otpFont
         label.isUserInteractionEnabled = true
@@ -149,11 +152,13 @@ private extension AEOTPTextField {
                 currentLabel.layer.borderWidth = otpFilledBorderWidth
                 currentLabel.layer.borderColor = otpFilledBorderColor.cgColor
                 currentLabel.backgroundColor = otpFilledBackgroundColor
+                currentLabel.textColor = otpTextColor
             } else {
                 currentLabel.text = otpDefaultCharacter
                 currentLabel.layer.borderWidth = otpDefaultBorderWidth
                 currentLabel.layer.borderColor = otpDefaultBorderColor.cgColor
                 currentLabel.backgroundColor = otpBackgroundColor
+                currentLabel.textColor = otpDefaultCharacterColor
             }
         }
 

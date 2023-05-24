@@ -21,7 +21,7 @@ struct SwiftUIView: View {
                 .padding(.top, 60)
                 .padding(.leading, 16)
             
-            AEOTPView(text: $otp, width: 150, height: 50, otpFilledBackgroundColor: .green, otpDefaultBorderColor: UIColor.gray, otpDefaultBorderWidth: 3) {
+            AEOTPView(text: $otp, height: 50, otpDefaultCharacter: "-", otpDefaultCharacterColor: .blue, otpFilledBackgroundColor: .green, otpDefaultBorderColor: UIColor.gray, otpDefaultBorderWidth: 3) {
                 alertIsPresented = true
             } //: AEOTPView
             .padding()
