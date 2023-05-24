@@ -125,6 +125,8 @@ private extension AEOTPTextField {
         let label = UILabel()
         label.backgroundColor = otpBackgroundColor
         label.layer.cornerRadius = otpCornerRaduis
+        label.layer.borderColor = otpDefaultBorderColor.cgColor
+        label.layer.borderWidth = otpDefaultBorderWidth
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.textColor = otpTextColor
