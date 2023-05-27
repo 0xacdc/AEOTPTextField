@@ -53,6 +53,8 @@ public struct AEOTPView: View {
     private let enableClearOTP: Bool
     /// A Closure that fires when the OTP returned
     private var onCommit: (() -> Void)?
+    /// A Variable that makes becomeFirstResponder on the textField
+    private var makeActive: Bool
     /// Type of keyboard to show
     private let keyboardType: UIKeyboardType
 
@@ -66,6 +68,7 @@ public struct AEOTPView: View {
     ///   - width: The default width of the AEOTPView
     ///   - height: The default height of the AEOTPView
     ///   - otpDefaultCharacter: The default character placed in the text field slots
+    ///   - otpDefaultCharacterColor: The default background color of the default character placed in the text field slots
     ///   - otpBackgroundColor: The default background color of the text field slots before entering a character
     ///   - otpFilledBackgroundColor: The default background color of the text field slots after entering a character
     ///   - otpCornerRaduis: The default corner raduis of the text field slots
@@ -78,6 +81,7 @@ public struct AEOTPView: View {
     ///   - otpFont: The default font of the text
     ///   - isSecureTextEntry: A Boolean value that indicates whether the text object disables text copying and, in some cases, hides the text that the user enters.
     ///   - enableClearOTP: A Boolean value that used to allow the `AEOTPView` clear the OTP and set the `AEOTPView` to the default state when you set the OTP Text with Empty Value
+    ///   - makeActive: A Boolean value that used to activate becomeFirstResponder
     ///   - onCommit: A Closure that fires when the OTP returned
     public init(
         text: Binding<String>,
@@ -99,6 +103,7 @@ public struct AEOTPView: View {
         isSecureTextEntry: Bool = false,
         enableClearOTP: Bool = false,
         onCommit: (() -> Void)? = nil,
+        makeActive: Bool = false,
         keyboardType: UIKeyboardType = .numberPad
     ) {
         self._text = text
@@ -120,6 +125,7 @@ public struct AEOTPView: View {
         self.isSecureTextEntry = isSecureTextEntry
         self.enableClearOTP = enableClearOTP
         self.onCommit = onCommit
+        self.makeActive = makeActive
         self.keyboardType = keyboardType
     }
 
@@ -164,6 +170,7 @@ public struct AEOTPView: View {
             otpFont: otpFont,
             isSecureTextEntry: isSecureTextEntry,
             onCommit: onCommit,
+            makeActive: makeActive,
             keyboardType: keyboardType
         )
     } //: otpView
